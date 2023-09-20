@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="U0R1rZYmXTjsVif4-_UX8i3X22mvixAEUzBWq0XZNvo" />
+
+    <!-- SEO 관련 메타 태그 추가 -->
+    <meta name="description" content="키워드프로 · 1개월 검색량 PC, Mobile 조회 · 로그인 없이 바로 사용 가능">
+    <meta name="keywords" content="네이버, 키워드, 검색량, 조회, 통계">
+    <link rel="icon" href="/img/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/img/favicon.ico"/>
+    <title>키워드프로</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="/js/home.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6836823325364271"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<div class="image-container">
+    <img src="/img/naver_search_ad.png" alt="Naver Search Ad API">
+</div>
+
+<h2>키워드 검색량 조회</h2>
+<form action="search-keyword" method="get" onsubmit="return removeSpaces();">
+    <label for="keyword">키워드 입력:</label>
+    <input type="text" id="keyword" name="keyword" required>
+    <input type="submit" value="조회">
+</form>
+
+<div id="result"></div>
+</body>
+</html>

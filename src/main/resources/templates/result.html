@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Title -->
+    <title>키워드프로</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="키워드프로 · 1개월 검색량 PC, Mobile 조회 · 로그인 없이 바로 사용 가능">
+
+    <!-- Open Graph tags for better social sharing -->
+    <meta property="og:title" content="키워드 검색량 결과 | 키워드프로">
+    <meta property="og:description" content="키워드에 대한 월간 검색 및 클릭 통계를 확인하세요.">
+    <meta property="og:image" content="https://searchkeywordapi.com/img/naver_search_ad.png"> <!-- Replace with your site's thumbnail or banner image URL -->
+    <meta property="og:url" content="https://searchkeywordapi.com/"> <!-- Replace with the URL of this specific page -->
+
+    <link rel="icon" href="/img/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/img/favicon.ico"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"> <!-- Google Fonts로부터 Roboto 글씨체 로드 -->
+    <link rel="stylesheet" href="/css/result.css">
+    <script src="/js/result.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6836823325364271"
+            crossorigin="anonymous"></script>
+</head>
+<body>
+<h1 style="display:none;">키워드 검색량 결과</h1> <!-- This hidden h1 gives search engines a clear topic of the page. -->
+<div class="back-btn-container">
+    <button class="back-btn" onclick="window.history.back()">뒤로가기</button>
+</div>
+
+<div class="table-container">
+    <div class="top-section">
+        <div class="notice-container">
+            <div class="notice-header">공지사항</div>
+            <ul class="notice-list">
+                <li>공지사항 내용 1</li>
+                <li>공지사항 내용 2</li>
+                <li>공지사항 내용 3</li>
+                <li>공지사항 내용 4</li>
+                <li>공지사항 내용 5</li>
+            </ul>
+        </div>
+
+        <div class="result-image-container">
+            <img src="/img/result.png" alt="Search Keyword Result Image" class="result-image">
+        </div>
+    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>연관키워드</th>
+            <th class="sortable">월간 PC 검색수</th>
+            <th class="sortable">월간 모바일 검색수</th>
+            <th class="sortable">월 평균 PC 클릭수</th>
+            <th class="sortable">월 평균 모바일 클릭수</th>
+            <th class="sortable">월 평균 PC 클릭률</th>
+            <th class="sortable">월 평균 모바일 클릭률</th>
+            <th class="sortable">월 평균 노출 광고수</th>
+            <th class="sortable">PC 광고 경쟁 정도</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="keywordInfo : ${keywordList}">
+            <td th:text="${keywordInfo.relKeyword}"></td>
+            <td th:text="${keywordInfo.monthlyPcQcCnt + '회'}"></td>
+            <td th:text="${keywordInfo.monthlyMobileQcCnt + '회'}"></td>
+            <td th:text="${keywordInfo.monthlyAvePcClkCnt + '회'}"></td>
+            <td th:text="${keywordInfo.monthlyAveMobileClkCnt + '회'}"></td>
+            <td th:text="${keywordInfo.monthlyAvePcCtr + '%'}"></td>
+            <td th:text="${keywordInfo.monthlyAveMobileCtr + '%'}"></td>
+            <td th:text="${keywordInfo.plAvgDepth + '회'}"></td>
+            <td th:text="${keywordInfo.compIdx}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

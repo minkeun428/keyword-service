@@ -1,0 +1,144 @@
+body {
+    font-family: 'Roboto', sans-serif; /* 모던한 글씨체로 변경 */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+th.sortable {
+    color: #4CAF50;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+th.sortable:hover {
+    text-decoration: none; /* 마우스를 올렸을 때 밑줄 제거 */
+}
+
+
+.table-container {
+    width: 80%;
+    max-width: 1050px; /* 최대 너비 설정 */
+    overflow-x: auto; /* 너비가 초과될 경우 스크롤 표시 */
+}
+
+table {
+    width: 100%; /* 테이블의 너비를 컨테이너에 맞춤 */
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    padding: 10px 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #666;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.back-btn-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.back-btn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #4CAF50; /* 버튼의 기본색 */
+    color: white;
+    border-radius: 5px; /* 버튼 모서리 둥글게 */
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer; /* 마우스 포인터를 손모양으로 변경 */
+    transition: background-color 0.3s; /* 마우스 오버시 버튼 색상이 부드럽게 바뀌도록 설정 */
+}
+
+.back-btn:hover {
+    background-color: #45a049; /* 마우스 오버시 버튼 색상 */
+}
+
+.result-image-container {
+    flex: 2;
+    width: 80%;
+    max-width: 1050px;
+    margin: 20px 0 20px 10%; /* 위와 아래는 20px, 왼쪽은 10% (이 값을 조절하면 이미지의 오른쪽 이동 거리가 변경됩니다) */
+    text-align: center;
+}
+
+.result-image {
+    max-width: 120%;   /* 이미지의 최대 너비를 50%로 조절 */
+    height: auto;      /* 이미지의 원래 종횡비를 유지 */
+    display: block;    /* 이미지를 블록 요소로 만들어 여백을 적용 */
+    margin: 0 auto;    /* 좌우 여백을 자동으로 설정하여 이미지를 가운데로 정렬 */
+}
+
+.notice-container {
+    flex: 1;  /* 공지사항 영역이 가용 공간을 채움 */
+    margin-right: 20px;  /* 오른쪽 여백 추가 */
+    width: 25%;  /* 표의 너비를 설정. 필요에 따라 조절 가능합니다. */
+    background-color: #fafafa;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 20px 0;
+}
+
+.notice-header {
+    background-color: #4CAF50;  /* 헤더의 배경색 */
+    color: white;
+    padding: 10px;
+    font-size: 1.2em;
+    text-align: center;
+    border-radius: 3px 3px 0 0;
+    font-weight: 600;
+}
+
+.notice-list {
+    list-style-type: none;  /* 목록의 불릿(점) 제거 */
+    padding-left: 0;
+}
+
+.notice-list li {
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+    transition: background-color 0.3s;
+}
+
+.notice-list li:last-child {
+    border-bottom: none; /* 마지막 항목의 하단 테두리 제거 */
+}
+
+.notice-list li:hover {
+    background-color: #f5f5f5;
+}
+
+.top-section {
+    display: flex;
+    justify-content: space-between;  /* 아이템들 사이의 여백을 최대로 */
+    width: 80%;  /* 전체 컨테이너의 너비 */
+    max-width: 1050px;  /* 최대 너비 설정 */
+    margin: 20px auto;  /* 중앙 정렬 */
+}
+
+/* 반응형 디자인 */
+@media only screen and (max-width: 768px) {
+    .table-container {
+        width: 95%;
+    }
+    th, td {
+        padding: 8px 12px;
+    }
+}
